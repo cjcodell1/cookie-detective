@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "version": "0.1",
+    "name": "Cookie Detective",
+    "description": "Investigate and manage cookies!",
+    "icons":
+        {
+            "16": "images/cookie-mag16.png",
+            "48": "images/cookie-mag48.png",
+            "128": "images/cookie-mag128.png"
+        },
+    "permissions": [
+        "cookies",
+        "*://*/*"
+    ],
+
+    "browser_action":
+        {
+            "default_icon": "images/cookie-mag.png",
+            "default_popup": "popup.html"
+        }
+}
