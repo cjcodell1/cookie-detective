@@ -27,13 +27,13 @@ Since this extension is not on the Chrome Web Store, you will have to follow the
 
 ## Features
 
-[X] List of all cookies stored on your browser
-[X] Delete button to easily delete cookies
-[ ] Checkboxes to select and delete multiple cookies
-[ ] Sort by domain
-[ ] Filter by domain
-[ ] Show expiration date
-[ ] Sort by expiration date
-[ ] Filter by expiration date
-[ ] Set expiration date for a cookie
-[ ] Enforce a max expiration date for all cookies
+- [X] List of all cookies stored on your browser
+- [X] Delete button to easily delete cookies
+- [ ] Checkboxes to select and delete multiple cookies
+- [ ] Sort by domain
+- [ ] Filter by domain
+- [ ] Show expiration date
+- [ ] Sort by expiration date
+- [ ] Filter by expiration date
+- [ ] Set expiration date for a cookie
+- [ ] Enforce a max expiration date for all cookies
