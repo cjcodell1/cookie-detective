@@ -31,7 +31,7 @@ Since this extension is not on the Chrome Web Store, you will have to follow the
 - [X] Delete button to easily delete cookies
 - [ ] Checkboxes to select and delete multiple cookies
 - [ ] Sort by domain
-- [ ] Filter by domain
+- [X] Filter by domain
 - [ ] Show expiration date
 - [ ] Sort by expiration date
 - [ ] Filter by expiration date
