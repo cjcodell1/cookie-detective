@@ -1,10 +1,18 @@
-
-
 const THEAD = ['name', 'value', 'domain', 'delete']
+
+document.addEventListener('DOMContentLoaded', function() {
+    chrome.cookies.getAll({}, loadAll);
+});
+
+function loadAll(cookies) {
+	createTable(cookies)
+	createFilter()
+}
 
 // Creates a table of all cookies on the browser
 function createTable(cookies) {
     var table = document.createElement('table');
+	table.setAttribute("id", "table");
 
     // Creating the table head.
     var tableHead = document.createElement('thead');
@@ -44,7 +52,6 @@ function createTable(cookies) {
         button.addEventListener('click', function() {
             delCookie(cookie);
             tableBody.removeChild(tableBodyRow);
-            //chrome.cookies.getAll({}, createTable); // need to remove the chlid now
         });
         button.appendChild(document.createTextNode('delete'));
         del.appendChild(button);
@@ -78,6 +85,29 @@ function format(str, len) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    chrome.cookies.getAll({}, createTable);
-});
+// filters out domains
+function filter() {
+	var filter = document.getElementById("filterBox").value;
+	var rows = document.getElementById("table").getElementsByTagName("tr");
+	var column = 2; // domain
+
+
+	// Loop through rows and filter out those that do not match
+	Array.from(rows).forEach(function(row) {
+		var domain = row.getElementsByTagName("td")[column];
+		if (domain) {
+			var domainName = domain.textContent;
+			if (domainName.indexOf(filter) > -1) {
+				row.style.display = "";
+			} else {
+				row.style.display = "none";
+			}
+		}
+	});
+}
+
+function createFilter() {
+	var filterBox = document.getElementById("filterBox")
+	filterBox.addEventListener("keyup", filter)
+}
+
